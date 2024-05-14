@@ -1,2 +1,0 @@
-from MinONEmulator import MinONEmulator
-

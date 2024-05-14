@@ -1,7 +1,7 @@
 import random
 import time
 
-from Node import BaseNode
+from BaseNode import BaseNode
 
 
 class Randomizer(BaseNode):
@@ -16,7 +16,16 @@ class Randomizer(BaseNode):
 
 class Printer(BaseNode):
     def __init__(self):
-        super().__init__(["value"], [])
+        super().__init__(["in"], [])
 
     def process(self):
-        print(self.input_values["value"], "INSIDE PRINTER")
+        print(self.input_values["in"], "INSIDE PRINTER")
+
+
+r = Randomizer()
+p = Printer()
+
+
+r.bind_o2i("out", p, "in")
+r.start()
+p.start()

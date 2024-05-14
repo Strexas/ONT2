@@ -1,7 +1,7 @@
 import random
 import time
 
-from Node import BaseNode
+from BaseNode import BaseNode
 from testing import Printer
 
 from minknow_api.manager import Manager
@@ -43,7 +43,6 @@ manager = Manager()
 manager.add_simulated_device("MS00002", minknow_api.manager_pb2.SimulatedDeviceType.SIMULATED_MINION)
 devices = [i for i in manager.flow_cell_positions()]
 print(devices)
-connection = devices[0].connect()
 # stop_condition = protocols.CriteriaValues(runtime=72 * 60 * 60)
 # outputargs = protocols.OutputArgs(reads_per_file="fast5s_reads_per_file")
 # run_id = protocols.start_protocol(connection,
