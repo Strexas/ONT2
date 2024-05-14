@@ -1,7 +1,6 @@
 import random
-import time
 
-from BaseNode import BaseNode
+from pipeline.BaseNode import BaseNode
 
 
 class Randomizer(BaseNode):
@@ -25,7 +24,7 @@ class Printer(BaseNode):
 r = Randomizer()
 p = Printer()
 
-
 r.bind_o2i("out", p, "in")
+
 r.start()
 p.start()
